@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "OpenDUNE 0.1 release"
+date:  "2009-10-31T23:00:39+00:00"
+creator:  "Steven 'Xaroth' Noorbergen"
+---
+
+                    <p>Today we are proud to announce the first public release of OpenDUNE.</p>
+<p>It is our first release of many. While it’s classified as a release, it is not a 100% stable release (see below).</p>
+<p>If you want more information about this release or OpenDUNE, please check our <a href="https://web.archive.org/web/20140703041507/http://forum.opendune.org/">forums</a> or our <a href="https://web.archive.org/web/20140703041507/http://wiki.opendune.org/">wiki</a>. If you find a bug, please report it at our <a href="https://web.archive.org/web/20140703041507/http://bugs.opendune.org/">bug tracking</a> system.</p>
+<p>A feature list would normally be in order, but as this is the first version, and 100% identical to the original Dune II, there is none yet.</p>
+<p>You can grab your copy at the following location:<br>
+<a href="https://web.archive.org/web/20140703041507/http://binaries.opendune.org/releases/0.1/">http://binaries.opendune.org/releases/0.1/</a></p>
+<p>NOTE: in order to play this you will require all the data files of the 1.07 EU release to be present in the /data folder; without this the game will not work. Also, the first time your start the game, you are forced through the whole intro (your mouse and keyboard won’t work). This is only the first time, and exactly as it was in the original Dune II. Finally, the security question is also there. Answering it wrong makes you get kicked out of the game. We suggest to buy the original game with the manual, so you can answer them truthful.</p>
+<p>Below is a list of known issues, due to the method of decompiling. Besides these issues, there are the ones that Dune II already had (we haven’t fixed any bug of the original Dune II):</p>
+<ul>
+<li>The game sometimes randomly hangs. Mostly when entering Buy-screens.</li>
+<li>The game sometimes randomly shows garbage on your screen, units disappear, we even have a reported case of switching houses. This is because in the emulated memory there is a buffer overflow, which we can’t track down. It is _not_ a buffer overflow in the hosts memory! So there is in no way a security risk. It happens inside the emulated memory.</li>
+<li>The mouse can go crazy from time to time. Just give it a moment, and it mostly restores.</li>
+<li>Saving the game can lock up the game. Close the game and load your game, and you should be fine.</li>
+</ul>
+<p>All above problems will resolve themselves when converting to real C, which will happen in the next few releases. To avoid loss of progress, we suggest you to save often. This is only a temporary solution, and the game will be more stable as it matures.</p>
+<p>Special thanks:</p>
+<p>This release wouldn’t have been here if it wasn’t for the following people (alphabetic order):</p>
+<p>- Alberth (for all his testing in the early stages)<br>
+- glx (for joining our dev-team and making the Windows binary happen)<br>
+- nsz (for his C89 knowledge)<br>
+- planetmaker (for his testing)</p>
+				                    

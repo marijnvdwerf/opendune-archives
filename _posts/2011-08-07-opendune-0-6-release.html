@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "OpenDUNE 0.6 release"
+date:  "2011-08-07T12:49:01+00:00"
+creator:  "Patric 'TrueBrain' Stout"
+---
+
+                    <p>Just over 10 days ago we made our last release. And today again, we present you with proud the next release of OpenDUNE: 0.6.</p>
+<p>A day after our last release it became clear to us that there was a critical bug in it, which under certain circumstances (bad-luck situations) could make the game unplayable. Of course this bug got quickly addressed, but right after the release of 0.5 we drifted off too far already with our main development trunk. Within a day we made some critical process, which made us hold a fix-release. Instead, today we release a new version which will be much more stable in many ways.</p>
+<p>First off, we removed the last bits of the 16bit world, and removed LibEMU from our project. LibEMU is the library that gave us access to the 16bit world. This is a big milestone for this project, as we are now fully native for which ever system you compile, and we only depend on SDL (and asound under Linux).</p>
+<p>The second thing we addressed, is that OpenDUNE always used 100% CPU on one core. This is because it contained many many infinite loops waiting for some time to pass. We located most of them, and made them less CPU intense. The game now uses between 4% and 20%, depending where in the game you are. It is still a lot for such a game, but we are working on it!</p>
+<p>The other thing is sound support. Although voices and music were supported in older versions, it was often reported as buggy and often the case for deadlocks (‘hanging’). We sat down and fixed all the problems related to voices and music**. So you can now all fully enjoy the beauty of the intro (remember it was made in 1991!), and play the game with all the sounds and pieces on it.</p>
+<p>The last major milestone in this release is that we improved the speed of the video-interrupt, from several milliseconds to a few microseconds. This means that many parts of the game are much more smooth, even on slower machines.</p>
+<p>We also spent several hours playing the game, detecting and fixing errors when we found them. We fixed issues with 1.07hs and 1.07us datafiles, and they are now fully supported. Many more fixes were made, with over 300 commits made.</p>
+<p>And for the people who enjoy those things, OpenDUNE now also compiles with TinyC Compiler, and with that is very much ANSI-C.</p>
+<p>So as you can understand, with proud we present you OpenDUNE 0.6. We hope you enjoy it as much as we do.</p>
+<p>As usual, a complete list of enhancements can be found <a href="https://web.archive.org/web/20140703032701/http://svn.opendune.org/tags/0.6/enhancement.txt?mode=view#filecontent">here</a> and a changelog has been made, and can be viewed <a href="https://web.archive.org/web/20140703032701/http://binaries.opendune.org/releases/0.6/changelog.txt">http://binaries.opendune.org/releases/0.6/changelog.txt</a>.</p>
+<p>You can download the release <a href="https://web.archive.org/web/20140703032701/http://binaries.opendune.org/releases/0.6/">http://binaries.opendune.org/releases/0.6/</a>, and <a href="https://web.archive.org/web/20140703032701/http://forum.opendune.org/viewtopic.php?f=4&amp;p=382">here</a> you can discuss the release on our forum. If you notice any bugs, please report them at our bugtracker at <a href="https://web.archive.org/web/20140703032701/http://bugs.opendune.org/">http://bugs.opendune.org/</a>.</p>
+<p>We strongly recommend that you download an updated scenario.pak (tnx to MrFlibble): <a href="https://web.archive.org/web/20140703032701/http://forum.opendune.org/viewtopic.php?f=9&amp;t=23">http://forum.opendune.org/viewtopic.php?f=9&amp;t=23</a></p>
+<p>Special thanks:</p>
+<p>This release wouldn’t have been here if it wasn’t for the following people (alphabetic order):</p>
+<p>- MrFlibble (for his scenario.pak updates, and his endless questions and suggestions and insights)</p>
+<p>The development team (alphabetic order):</p>
+<p>Albert Hofkamp (Alberth)<br>
+Loic Guilloux (glx)<br>
+Patric Stout (TrueBrain)<br>
+Steven Noorbergen (Xaroth)</p>
+<p>**: to solve voice issues, we had to upscale all VOCs from all different kind of frequencies to a single one (22050 Hz). We are not audio professionals, so it was solved with a linear upscale algorithm. This introduces a slight noise (there is no low-pass filter), and slightly distorts the voices. If you know how to make a better (license-free) algorithm, please drop by and help us out!</p>
+				                    
